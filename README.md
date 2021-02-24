@@ -1,2 +1,2 @@
 # Eve-API-tiker
-Web app that uses SSO to read from Eve Online API
+Read from Eve Online API and display ticker for mineral prices
