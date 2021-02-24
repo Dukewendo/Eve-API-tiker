@@ -1,32 +1,34 @@
+let items= [
+  "Tritanium",
+  "Pyerite",
+  "Mexallon",
+  "Isogen",
+  "Nocxium",
+  "Zydrine",
+  "Megacyte"
+  ]
+
 const getData = async function() {
-try {
+
   
   const resp = await fetch("https://market.fuzzwork.co.uk/aggregates/?region=10000002&types=34,35,36,37,38,39,40")
   const data = await resp.json();
-  // CODE here to loop through data and assign to HTML LIST
   
-  //loop through [mineral] + LOOP THROUGH OBJECTS
+//LOOP this when you decide to be smart-
 
-var x;
-for ( x in data) {
-  document.getElementById("ticker").innerHTML +=(data[x].buy.max);
-}
-  
+document.getElementById("ticker").innerHTML = 
+(items[0] + " " + data["34"].buy.max + " ISK....."+ 
+(items[1] + " " + data["35"].buy.max + " ISK.....")+
+(items[2] + " " + data["36"].buy.max + " ISK.....")+
+(items[3] + " " + data["37"].buy.max + " ISK.....")+
+(items[4] + " " + data["38"].buy.max + " ISK.....")+
+(items[5] + " " + data["39"].buy.max + " ISK.....")+
+(items[6] + " " + data["40"].buy.max + " ISK.....END")
 
-     
-} catch (err){
-  console.log("Something went wrong!", err);
-}
-}
 
+);
+
+
+}
 getData();
 
-let minerals= [
-"Tritanium",
-"Pyerite",
-"Mexallon",
-"Isogen",
-"Nocxium",
-"Zydrine",
-"Megacyte"
-]
